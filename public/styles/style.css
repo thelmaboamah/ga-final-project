@@ -1,0 +1,21 @@
+/*** Hide canvas element ***/
+canvas {
+  display: none; }
+
+/*** Video ***/
+video {
+  width: 100% !important;
+  height: auto !important; }
+
+/*** Photos ***/
+.output {
+  display: none; }
+
+figure {
+  margin: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-start: 0; }
+
+/*# sourceMappingURL=style.css.map */
