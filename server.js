@@ -16,12 +16,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use('/', router);
 
-mongoose.connect('mongodb://localhost/myphotoapp', function(err) {
-  if (err) {
-    console.log('Could not connect to mongodb on localhost. Ensure that you have mongodb running on localhost and mongodb accepts connections on standard ports!');
-  }
-});
-
 //Render homepage
 router.route('/')
 	.get(function(req, res) {
