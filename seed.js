@@ -1,4 +1,4 @@
-var Photo = require('./controllers/photo');
+var Photo = require('./models/photo');
 
 var photos = [
 	{
@@ -15,10 +15,10 @@ var photos = [
 
 Photo.remove({}, function(err) {
 	if (err) {console.log('Unable to empty the database', err);}
-
+	console.log('Emptied database')
 	Photo.create(photos, function(err, photos) {
 		if (err) { console.log('Could not seed photos', err);}
-		console.log('create', photos.length, 'photos');
+		console.log('created', photos.length, 'photos');
 		process.exit();
 	})
 
