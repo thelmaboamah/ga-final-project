@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var photoSchema = new mongoose.Schema({
 	created_at: { type: Date, default: Date.now },
-	url: {type: String, required: true},
-	filter: {type: String, require: true},
-	owner: { type: Schema.Types.ObjectId, ref: "User", required: true } 
+	url: String,
+	filter: String,
+	note: String //Add length restriction
 });
 
 var Photo = mongoose.model('Photo', photoSchema);
