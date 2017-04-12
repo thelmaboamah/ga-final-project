@@ -24,17 +24,15 @@ router.route('/')
 
 //Render photo display page
 router.route('/photos')
-	.get(function(req, res) {
-		res.render('photos');
-	})
-
+	.get(photosController.allPhotos)
 
 router.route('/api/photos')
-	.get(photosController.allPhotos)
 	.post(photosController.savePhoto)
 
-router.route('/api/photos/:id')
+router.route('/photos/:id')
 	.get(photosController.onePhoto)
+
+router.route('/api/photos/:id')
 	.put(photosController.updatePhoto)
 	.delete(photosController.deletePhoto)
 
