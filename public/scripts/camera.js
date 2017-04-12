@@ -35,7 +35,7 @@ $(document).ready(function(){
 		
 		$photo.attr('src', imgUrl);
 
-		$('.output').show();
+		$('.output').css('display', 'flex');
 	});
 
 	//Preview and save selected photo

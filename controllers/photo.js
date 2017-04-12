@@ -13,7 +13,7 @@ function onePhoto(req, res) {
 
 	Photo.findOne({_id: id}, function(err, photo) {
 		if (err) { console.log ('Could not find specified photo', err);}
-		res.json(photo);
+		res.render('show', {photo: photo });
 	})
 }
 
@@ -29,9 +29,8 @@ function savePhoto(req, res) {
 function updatePhoto(req, res) {
 	var id = req.params.id;
 	var updates = {
-		filter: req.body.filter,
 		note: req.body.note
-	}
+	} //Only updating notes for now
 	Photo.findOneAndUpdate({_id: id}, updates, {new: true}, function(err, updatedPhoto){
 		if (err){ console.log('Could not update photo', err );}
 		res.json(updatedPhoto);
@@ -40,9 +39,9 @@ function updatePhoto(req, res) {
 
 function deletePhoto(req, res) {
 	var id = req.params.id;
-	Photo.findOneAndRemove({_id: id}, function(err, res) {
+	Photo.findOneAndRemove({_id: id}, function(err, deletedPhoto) {
 		if (err) {console.log('Could not delete photo', err);}
-		res.sendStatus(204);
+		res.json(deletedPhoto)
 	})
 }
 

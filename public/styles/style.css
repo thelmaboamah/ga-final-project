@@ -21,4 +21,8 @@ figure {
 .preview {
   display: none; }
 
+#snapshot, #reopen-camera {
+  font-size: 2.5em;
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */

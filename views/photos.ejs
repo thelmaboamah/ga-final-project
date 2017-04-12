@@ -10,8 +10,8 @@
 
 			<% photos.forEach(function(photo) {%>
 			   <div>
-				   <figure class="<%= photo.filter%>">
-				     <img src="<%= photo.url%>" alt="selfie" class="photo">
+				   <figure class="<%= photo.filter %>">
+				     <a href="/photos/<%= photo._id %>"><img src="<%= photo.url %>" alt="selfie" class="photo"></a>
 				   </figure>
 			   	<p><%= photo.note %></p>
 			   </div>
@@ -19,7 +19,7 @@
 
 		<% } %>
 
-		<% if (!photos) { %>
+		<% if (JSON.stringify(photos) === '[]') { %>
 			<h3>You haven't taken any photos yet. <a href="/">Go take some!</a></h3>
 		<% } %>	
 	</div>

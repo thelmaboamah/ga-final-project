@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include ./partials/head %>
+<body>
+	<% include ./partials/nav %>
+		<div id="photo-info">
+			<% if (photo) { %>
+		   <div>
+			   <figure class="<%= photo.filter %>">
+			     <a href="/photos/<%= photo._id %>"><img src="<%= photo.url %>" alt="selfie" class="photo"></a>
+			   </figure>
+		   	<p><%= photo.note %></p>
+		   </div>
+
+		   <form>
+		   	<label for="note">Edit your note</label>
+		   	<input type="text" name="note" id="note" maxlength="30">
+		   	<input type="submit" value="Update" id="updatePhotoButton">
+		   </form>	
+				
+				<button id="deletePhotoButton">Delete</button>
+		<% } %>
+		</div>
+
+	<script src="/scripts/app.js"></script>
+</body>
+</html>
