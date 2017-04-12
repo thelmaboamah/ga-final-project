@@ -28,20 +28,13 @@ $(document).ready(function(){
 	canvas.width = 480;
 	canvas.height = 360;
 
-	//Give photo data attribute that corresponds with their filter style.
-	// $photo.each(function() {
-	// 	filter = $(this).parent('figure').attr('class');
-	// 	$(this).data('filter', filter);
-	// });
-
 	//Take a picture
 	$snapButton.click(function () {
 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-		canvas.toBlob(function(blob){
-			url = URL.createObjectURL(blob);
-			$photo.attr('src', url);
-		}, 'image/jpeg', 1);
+		imgUrl = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
 		
+		$photo.attr('src', imgUrl);
+
 		$('.output').show();
 	});
 

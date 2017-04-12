@@ -4,7 +4,7 @@ var Photo = require('../models/photo')
 function allPhotos(req, res) {
 	Photo.find({}, function(err, photos) {
 		if (err) {console.log('Could not find all photos', err);}
-		res.json(photos);
+		res.render('photos', {photos: photos});
 	})
 }
 
