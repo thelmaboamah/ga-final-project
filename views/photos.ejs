@@ -2,23 +2,26 @@
 <html lang="en">
 <% include ./partials/head %>
 <body>
-	<h1>Photos page</h1>
+	<% include ./partials/nav %>
+	<div class="container-fluid">
+		<h1>Photos page</h1>
 
-	<% if (photos) { %>
+		<% if (photos) { %>
 
-		<% photos.forEach(function(photo) {%>
-		   <div>
-			   <figure class="<%= photo.filter%>">
-			     <img src="<%= photo.url%>" alt="selfie" class="photo">
-			   </figure>
-		   	<p><%= photo.note %></p>
-		   </div>
-		<% }); %>
+			<% photos.forEach(function(photo) {%>
+			   <div>
+				   <figure class="<%= photo.filter%>">
+				     <img src="<%= photo.url%>" alt="selfie" class="photo">
+				   </figure>
+			   	<p><%= photo.note %></p>
+			   </div>
+			<% }); %>
 
-	<% } %>
+		<% } %>
 
-	<% if (!photos) { %>
-		<h3>You haven't taken any photos yet. <a href="/">Go take some!</a></h3>
-	<% } %>
+		<% if (!photos) { %>
+			<h3>You haven't taken any photos yet. <a href="/">Go take some!</a></h3>
+		<% } %>	
+	</div>
 </body>
 </html>

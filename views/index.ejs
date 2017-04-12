@@ -2,57 +2,71 @@
 <html lang="en">
 <% include ./partials/head %>
 <body>
-	<div class="wrapper">
+	<% include ./partials/nav %>
+	<div class="container-fluid">
 		
-		<section>
-			<div class="preview">
-				
-				<div id="selected-pic">
-				<!-- Selected photo preview goes here -->	
+		<div class="row">
+			<section class="camera-group col-md-12">
+				<div class="preview">
+					
+					<div id="selected-pic">
+					<!-- Selected photo preview goes here -->	
+					</div>
+					<form>
+						<label for="note">Add a short note</label>
+						<input type="text" name="note" id="note" maxlength="30">
+						<input type="submit" value="Save" id="savePhotoButton">
+					</form>
+					<span id="reopen-camera" title="Return to camera view">
+						<i class="fa fa-camera" aria-hidden="true"></i>
+					</span>
 				</div>
-				<form>
-					<label for="note">Add a short note</label>
-					<input type="text" name="note" id="note" maxlength="30">
-					<input type="submit" value="Save" id="savePhotoButton">
-				</form>
-				<span id="reopen-camera" title="Return to camera view">
-					<i class="fa fa-camera" aria-hidden="true"></i>
-				</span>
-			</div>
+				
+				<div class="camera">
+					<span id="snapshot">
+						<i class="fa fa-camera" aria-hidden="true"></i>
+					</span>
+					<video autoplay></video>
+				</div>
+			</section>
+
+			<canvas></canvas>
 			
-			<div class="camera">
-				<span id="snapshot">
-					<i class="fa fa-camera" aria-hidden="true"></i>
-				</span>
-				<video autoplay></video>
-			</div>
-		</section>
+			<section class="photo-group col-md-12">
+				<div class="output row">
+					
+					<div class="col-xs-12">
+						<figure class="brooklyn">
+							<img alt="" class="photo">
+						</figure>
+					</div>
 
-		<canvas></canvas>
-		
-		<section class="">
-			<div class="output">
-				<figure class="brooklyn">
-					<img alt="" class="photo">
-				</figure>
+					<div class="col-xs-12">
+						<figure class="earlybird">
+							<img alt="Screen capture" class="photo">
+						</figure>
+					</div>
+					
+					<div class="col-xs-12">
+						<figure class="_1977">
+							<img alt="" class="photo">
+						</figure>
+					</div>
 
-				<figure class="earlybird">
-					<img alt="Screen capture" class="photo">
-				</figure>
-				
-				<figure class="_1977">
-					<img alt="" class="photo">
-				</figure>
-				
-				<figure class="willow">
-					<img alt="" class="photo">
-				</figure>
-				
-				<figure class="toaster">
-					<img alt="Screen capture" class="photo">
-				</figure>	
-			</div>
-		</section>
+					<div class="col-xs-12">
+						<figure class="willow">
+							<img alt="" class="photo">
+						</figure>
+					</div>
+
+					<div class="col-xs-12">
+						<figure class="toaster">
+							<img alt="Screen capture" class="photo">
+						</figure>	
+					</div>
+				</div>
+			</section>		
+		</div>
 
 	</div>
 
