@@ -57,4 +57,9 @@ figure {
 .container-fluid {
   padding: 0; }
 
+#take-some {
+  background: #88A825;
+  color: #fff;
+  padding: 3px; }
+
 /*# sourceMappingURL=style.css.map */
