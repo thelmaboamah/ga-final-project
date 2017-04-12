@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Close Up</title>
-
-	<link rel="stylesheet" href="/styles/vendor/normalize.min.css">
-	<link rel="stylesheet" href="/styles/vendor/cssgram.min.css">
-	<link rel="stylesheet" href="/styles/style.css">
-
-
-	<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://use.fontawesome.com/eed7e9c564.js"></script>
-
-  <script src="/scripts/camera.js" ></script>
-</head>
+<% include ./partials/head %>
 <body>
 	<div class="wrapper">
 		
@@ -27,7 +11,7 @@
 				<!-- Selected photo preview goes here -->	
 				</div>
 				<form>
-					<label for="note">Add a note</label>
+					<label for="note">Add a short note</label>
 					<input type="text" name="note" id="note" maxlength="30">
 					<input type="submit" value="Save" id="savePhotoButton">
 				</form>
@@ -69,7 +53,10 @@
 				</figure>	
 			</div>
 		</section>
-	
+
 	</div>
+
+	<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+	<script src="/scripts/camera.js" ></script>
 </body>
 </html>
