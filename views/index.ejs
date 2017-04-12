@@ -13,38 +13,63 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/eed7e9c564.js"></script>
+
   <script src="/scripts/camera.js" ></script>
 </head>
 <body>
-<div class="camera">
-		<video autoplay></video>
-		<button id="snapshot">Take a photo</button>
-	</div>
+	<div class="wrapper">
+		
+		<section>
+			<div class="preview">
+				
+				<div id="selected-pic">
+				<!-- Selected photo preview goes here -->	
+				</div>
+				<form>
+					<label for="note">Add a note</label>
+					<input type="text" name="note" id="note" maxlength="30">
+					<input type="submit" value="Save" id="savePhotoButton">
+				</form>
+				<span id="reopen-camera" title="Return to camera view">
+					<i class="fa fa-camera" aria-hidden="true"></i>
+				</span>
+			</div>
+			
+			<div class="camera">
+				<span id="snapshot">
+					<i class="fa fa-camera" aria-hidden="true"></i>
+				</span>
+				<video autoplay></video>
+			</div>
+		</section>
 
-	<canvas></canvas>
+		<canvas></canvas>
+		
+		<section class="">
+			<div class="output">
+				<figure class="brooklyn">
+					<img alt="" class="photo">
+				</figure>
 
-	<div class="output">
-		
-		<figure class="brooklyn">
-			<img alt="" class="photo">
-		</figure>
-
-		<figure class="earlybird">
-			<img alt="Screen capture" class="photo">
-		</figure>
-		
-		<figure class="_1977">
-			<img alt="" class="photo">
-		</figure>
-		
-		<figure class="willow">
-			<img alt="" class="photo">
-		</figure>
-		
-		<figure class="toaster">
-			<img alt="Screen capture" class="photo">
-		</figure>
-		
+				<figure class="earlybird">
+					<img alt="Screen capture" class="photo">
+				</figure>
+				
+				<figure class="_1977">
+					<img alt="" class="photo">
+				</figure>
+				
+				<figure class="willow">
+					<img alt="" class="photo">
+				</figure>
+				
+				<figure class="toaster">
+					<img alt="Screen capture" class="photo">
+				</figure>	
+			</div>
+		</section>
+	
 	</div>
 </body>
 </html>

@@ -1,5 +1,3 @@
-console.log("Sanity Check")
-
 $(document).ready(function(){
 
 	var $video = $('video');
@@ -9,7 +7,7 @@ $(document).ready(function(){
 	var $snapButton = $('#snapshot');
 	var $photo = $('.photo')
 
-		//Video Stream
+		//Video Stream, Source: https://webrtc.github.io/samples/src/content/getusermedia/filter/
 	var constraints = {
 		audio: false,
 		video: true
@@ -26,7 +24,7 @@ $(document).ready(function(){
 	navigator.mediaDevices.getUserMedia(constraints).
 	    then(photoCaptureSuccess).catch(photoCaptureError);
 
-	//To maintain aspect ratio with video element
+	//To maintain aspect ratio of video element
 	canvas.width = 480;
 	canvas.height = 360;
 
@@ -38,7 +36,6 @@ $(document).ready(function(){
 
 	//Take a picture
 	$snapButton.click(function () {
-
 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 		canvas.toBlob(function(blob){
 			url = URL.createObjectURL(blob);
@@ -46,10 +43,47 @@ $(document).ready(function(){
 		}, 'image/jpeg', 1);
 		
 		$('.output').show();
-
 	});
 
-	
+	//Preview and save selected photo
+	$photo.click(function(){
+		$('.camera').hide();
+		 $img = $(this);
+		 $figure = $img.parent();
+		 $('#selected-pic').empty();
+		 $figure.clone().prependTo('#selected-pic');
+		 $('.preview').show();
+
+		 $('#reopen-camera').click(function(){
+		 	$('.preview').hide();
+		 	$('.camera').show();
+		 })
+
+		 $('#savePhotoButton').click(function(event){
+		 		event.preventDefault();
+		 		data = {
+		 			url: $img.attr('src'),
+		 			filter: $figure.attr('class'),
+		 			note: $('input[name="note"]').val()
+		 		}
+
+		 		$.ajax({
+		 			method: 'POST',
+		 			url: '/api/photos',
+		 			data: data,
+		 			success: function(){
+		 				$('.preview, .output').hide();
+		 				$('.camera').show();
+		 				$('input[name="note"]').val('')
+		 			},
+		 			error: function(err){
+		 				console.log('Unable to save photo', err);
+		 			}
+		 		});
+		 });
+
+
+	});
 
 
 });
