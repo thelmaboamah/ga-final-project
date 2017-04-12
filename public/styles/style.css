@@ -1,11 +1,29 @@
+/*body {
+	height: 100vh !important;
+}*/
+.main {
+  height: calc(100vh - 70px); }
+
+.main > .row {
+  margin: 10px auto; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+nav {
+  background: #911146;
+  color: #fff;
+  height: 70px; }
+
 /*** Hide canvas element ***/
 canvas {
   display: none; }
 
 /*** Video ***/
 video {
-  width: 100% !important;
-  height: auto !important; }
+  width: 100%;
+  height: auto; }
 
 /*** Photos ***/
 .output {
@@ -23,6 +41,20 @@ figure {
 
 #snapshot, #reopen-camera {
   font-size: 2.5em;
-  cursor: pointer; }
+  cursor: pointer;
+  color: #88A825; }
+
+.photo-group {
+  width: 100%;
+  height: auto;
+  background: #160d18;
+  display: flex;
+  align-items: center;
+  height: 180px;
+  position: fixed;
+  bottom: 0; }
+
+.container-fluid {
+  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */

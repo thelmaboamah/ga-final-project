@@ -3,24 +3,32 @@
 <% include ./partials/head %>
 <body>
 	<% include ./partials/nav %>
-		<div id="photo-info">
-			<% if (photo) { %>
-		   <div>
-			   <figure class="<%= photo.filter %>">
-			     <a href="/photos/<%= photo._id %>"><img src="<%= photo.url %>" alt="selfie" class="photo"></a>
-			   </figure>
-		   	<p><%= photo.note %></p>
-		   </div>
-
-		   <form>
-		   	<label for="note">Edit your note</label>
-		   	<input type="text" name="note" id="note" maxlength="30">
-		   	<input type="submit" value="Update" id="updatePhotoButton">
-		   </form>	
-				
-				<button id="deletePhotoButton">Delete</button>
-		<% } %>
+	<div class="container-fluid main">
+		<div class="show col-xs-8 col-xs-offset-2">
+			<h2><%= photo.note %></h2>
+			<div id="photo-info">
+				<% if (photo) { %>
+				<div class="row">
+				   <div class="col-xs-8">
+					   <figure class="<%= photo.filter %>">
+					     <a href="/photos/<%= photo._id %>"><img src="<%= photo.url %>" alt="selfie" class="photo"></a>
+					   </figure>
+				   </div>
+					
+					<div class="col-xs-4">
+				   <form>
+				   	<label for="note">Edit your note</label>
+				   	<input type="text" name="note" id="note" maxlength="30">
+				   	<input type="submit" value="Update" id="updatePhotoButton">
+				   </form>	
+						
+						<button id="deletePhotoButton">Delete</button>		
+					</div>
+				</div>
+			<% } %>
+			</div>
 		</div>
+	</div>
 
 	<script src="/scripts/app.js"></script>
 </body>
