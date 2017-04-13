@@ -1,6 +1,6 @@
 # Close Up
 
-Because who doesn't love selfies and photo filters? Close up let's you take and save photos and apply fun Instagram style CSS filters. It's built with Node.js application built with Express and EJS.
+Because who doesn't love selfies and photo filters? Close up let's you take and save photos and apply fun Instagram style CSS filters. It's a Node.js application built with Express and EJS.
 
 ![Alt text](/public/images/closeup.png "Close up screenshot")
 
@@ -22,3 +22,4 @@ Because who doesn't love selfies and photo filters? Close up let's you take and 
 ## Next Features
 * Integrate users and auth
 * Let users organize photos into albums
+* DEPLOY
