@@ -19,7 +19,7 @@ $(document).ready(function(){
 				data: data,
 				success: function(){
 					$('input[name="note"]').val('')
-					location.href = "http://localhost:3000/photos/"
+					location.href = "/photos"
 				},
 				error: function(err){
 					console.log('Unable to save photo', err);
@@ -35,7 +35,7 @@ $(document).ready(function(){
 			data: id,
 			success: function(){
 				// $('#photo-info').html(res);
-					location.href = "http://localhost:3000/photos/"
+					location.href = "/photos"
 			},
 			error: function(err){
 				console.log('Unable to delete', err);
