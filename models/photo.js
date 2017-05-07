@@ -4,7 +4,7 @@ mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/myphotoapp');
 
 var photoSchema = new mongoose.Schema({
 	created_at: { type: Date, default: Date.now },
-	url: String,
+	url: { type: String, unique: true },
 	filter: String,
 	note: { type: String, maxlength: 30 }
 });
