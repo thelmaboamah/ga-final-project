@@ -22,4 +22,3 @@ Because who doesn't love selfies and photo filters? Close up let's you take and 
 ## Next Features
 * Integrate users and auth
 * Let users organize photos into albums
-* DEPLOY
